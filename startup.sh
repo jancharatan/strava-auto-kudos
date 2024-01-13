@@ -22,6 +22,8 @@ read -p "What is the email for your Strava account? 📧 " STRAVA_EMAIL
 echo "STRAVA_EMAIL=$STRAVA_EMAIL" > .env
 read -p "What is the password for your Strava account? 🔑 " STRAVA_PASSWORD
 echo "STRAVA_PASSWORD=$STRAVA_PASSWORD" >> .env
+read -p "What is the verify token you will use for the cURL command to set up the Strava API? 🔑 " STRAVA_VERIFY_TOKEN
+echo "STRAVA_VERIFY_TOKEN=$STRAVA_VERIFY_TOKEN" >> .env
 
 # Install requirements + optionally dev requirements
 printf "Do you want to install dev dependencies? 🤖 "
