@@ -6,6 +6,6 @@ def main():
     sc.give_kudos_by_activity_id(activity_id=10534438994)
     sc.driver.close()
 
-
 if __name__ == "__main__":
     main()
+    
