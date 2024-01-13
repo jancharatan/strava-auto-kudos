@@ -11,7 +11,7 @@ Instructions for creating your own Strava Kudos Bot can be found below.
 ### Requirements
 
 -   python3
--   Strava account that
+-   Strava account that logs in just with username/password (not with Google, etc.)
 -   `ngrok` installed & a free `ngrok` account (with the included free static domain)
 
 ### Instructions
