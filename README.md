@@ -2,7 +2,7 @@
 
 ## Description
 
-A bot that will gives Strava kudos everytime one of the accounts it follows uploads an activity. For instructions on how to set up your own Strava kudos bot, check out the section below!
+A bot that gives Strava kudos everytime an account it follows uploads an activity. For instructions on how to set up your own Strava kudos bot, check out the section below!
 
 ## Create your own Strava Kudos Bot
 
@@ -39,7 +39,7 @@ curl -X POST https://www.strava.com/api/v3/push_subscriptions \
 
 ## Resources
 
--   (Strava Webhooks)[https://developers.strava.com/docs/webhooks/]
--   (Strava API Settings)[https://www.strava.com/settings/api]
--   (Strava Webhook Example)[https://developers.strava.com/docs/webhookexample/]
--   (Getting Started with ngrok)[https://ngrok.com/docs/getting-started/]
+-   [Strava Webhooks](https://developers.strava.com/docs/webhooks/)
+-   [Strava API Settings](https://www.strava.com/settings/api)
+-   [Strava Webhook Example](https://developers.strava.com/docs/webhookexample/)
+-   [Getting Started with ngrok](https://ngrok.com/docs/getting-started/)
