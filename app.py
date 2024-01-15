@@ -1,9 +1,16 @@
 import json
+from threading import Thread
 from flask import Flask, request
 from dotenv import dotenv_values
+from strava_controller import StravaController
 
 app = Flask(__name__)
 secrets = dotenv_values(".env")
+
+def give_kudos(object_id: int) -> None:
+    sc = StravaController()
+    sc.give_kudos_by_activity_id(object_id)
+    sc.driver.close()
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhooks():
@@ -15,6 +22,9 @@ def webhooks():
             return json.dumps({ "hub.challenge": challenge }), 200
         return json.dumps({}), 403
     elif request.method == 'POST':
+        data = request.get_json()
+        if data.get("object_type") == "activity":
+            Thread(target=lambda: give_kudos(data.get("object_id"))).start()
         return json.dumps({ 'message': 'Event Received', 'code': 'SUCCESS' }), 200  
 
 def main():

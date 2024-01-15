@@ -42,4 +42,5 @@ curl -X POST https://www.strava.com/api/v3/push_subscriptions \
 -   [Strava Webhooks](https://developers.strava.com/docs/webhooks/)
 -   [Strava API Settings](https://www.strava.com/settings/api)
 -   [Strava Webhook Example](https://developers.strava.com/docs/webhookexample/)
+-   [Medium Article](https://medium.com/@eric.l.m.thomas/setting-up-strava-webhooks-e8b825329dc7)
 -   [Getting Started with ngrok](https://ngrok.com/docs/getting-started/)
