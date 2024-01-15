@@ -8,9 +8,12 @@ from strava_controller import StravaController
 app = Flask(__name__)
 secrets = dotenv_values(".env")
 
-def give_kudos(object_id: int) -> None:
+def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
     sc = StravaController()
-    sc.give_kudos_by_activity_id(object_id)
+    sc.login()
+    sc.give_kudos(object_id)
+    if comment:
+        sc.post_comment(object_id, comment)
     sc.driver.close()
 
 @app.route('/webhook', methods=['GET', 'POST'])
@@ -38,7 +41,7 @@ def webhooks():
     elif request.method == 'POST':
         data = request.get_json()
         if data.get("object_type") == "activity":
-            Thread(target=lambda: give_kudos(data.get("object_id"))).start()
+            Thread(target=lambda: give_kudos_and_post_comment(data.get("object_id"), "Beep boop this is a test")).start()
         return json.dumps({ 'message': 'Event Received', 'code': 'SUCCESS' }), 200  
 
 def main():
