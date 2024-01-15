@@ -2,11 +2,9 @@
 
 ## Description
 
-A bot that gives Strava kudos everytime an account it follows uploads an activity. For instructions on how to set up your own Strava kudos bot, check out the section below!
+A bot that gives Strava kudos everytime an authorized account uploads an activity. For instructions on how to set up your own Strava kudos bot, see the section below!
 
 ## Create your own Strava Kudos Bot
-
-Instructions for creating your own Strava Kudos Bot can be found below.
 
 ### Requirements
 
@@ -30,7 +28,11 @@ curl -X POST https://www.strava.com/api/v3/push_subscriptions \
     -F verify_token=VERIFY_TOKEN_YOU_CHOSE_IN_STARTUP_SCRIPT_LOCATED_IN_ENV_FILE
 ```
 
-6. Not Complete Yet: At this point, every time someone who your bot is following posts something, the bot should go ahead and give kudos. Note that for this to work, the sharing settings need to be set properly.
+6. At this point, every time an authorized account that the bot follows uploads an activity, the bot should give kudos. To authorize an account, paste the following url into a browser where you are logged in to the account you want authorized.
+
+```
+https://www.strava.com/oauth/authorize?client_id=CLIENT_ID_FROM_STRAVA_API_SETTINGS_PAGE&response_type=code&scope=activity:read_all&redirect_uri=https://YOUR_FREE_STATIC_URL.ngrok-free.app/webhook
+```
 
 ### Troubleshooting
 
@@ -43,4 +45,5 @@ curl -X POST https://www.strava.com/api/v3/push_subscriptions \
 -   [Strava API Settings](https://www.strava.com/settings/api)
 -   [Strava Webhook Example](https://developers.strava.com/docs/webhookexample/)
 -   [Medium Article](https://medium.com/@eric.l.m.thomas/setting-up-strava-webhooks-e8b825329dc7)
+-   [Another Article](https://www.curtiscode.dev/post/project/displaying-strava-stats-using-webhooks/)
 -   [Getting Started with ngrok](https://ngrok.com/docs/getting-started/)

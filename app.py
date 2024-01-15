@@ -1,4 +1,5 @@
 import json
+import requests
 from threading import Thread
 from flask import Flask, request
 from dotenv import dotenv_values
@@ -20,6 +21,19 @@ def webhooks():
         challenge = request.args.get("hub.challenge")
         if (mode == 'subscribe' and token == secrets["STRAVA_VERIFY_TOKEN"]):
             return json.dumps({ "hub.challenge": challenge }), 200
+        
+        client_id = secrets["STRAVA_CLIENT_ID"]
+        client_secret = secrets["STRAVA_CLIENT_SECRET"]
+        code = request.args.get("code")
+        grant_type = "authorization_code"
+
+        url = "https://www.strava.com/oauth/token"
+        payload = json.dumps({ "client_id": client_id, "client_secret": client_secret, "code": code, "grant_type": grant_type })
+        headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+        if code:
+            requests.post(url, data=payload, headers=headers)
+            return json.dumps({ "verification": "success"}), 200
+
         return json.dumps({}), 403
     elif request.method == 'POST':
         data = request.get_json()
