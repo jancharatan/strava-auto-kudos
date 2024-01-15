@@ -36,8 +36,8 @@ https://www.strava.com/oauth/authorize?client_id=CLIENT_ID_FROM_STRAVA_API_SETTI
 
 ### Troubleshooting
 
--   Some issues might arise if your environment variables are configured incorrectly. Make sure that you have the correct `STRAVA_EMAIL`, `STRAVA_PASSWORD` and `NGROK_DOMAIN` set up in your `.env` file.
--   Make sure that the authorization callback domain within your Strava API settings matches your `NGROK_DOMAIN` in your `.env` file and that you started the ngrok session with this domain redirecting to localhost running on port 5000.
+-   Some issues might arise if your environment variables are configured incorrectly. Make sure that you have the correct `STRAVA_EMAIL`, `STRAVA_PASSWORD`, `STRAVA_VERIFY_TOKEN`, `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET` set up in your `.env` file.
+-   Make sure that the authorization callback domain within your Strava API settings matches your `ngrok` domain and that you started the ngrok session with this domain redirecting to localhost running on port 5000.
 
 ## Resources
 
