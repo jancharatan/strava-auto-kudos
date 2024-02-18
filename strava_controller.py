@@ -9,9 +9,13 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 class StravaController:
     def __init__(self) -> None:
+        options=Options()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        executable = GeckoDriverManager().install()
         self.driver = webdriver.Firefox(
-            service=Service(executable_path=GeckoDriverManager().install()), 
-            options=Options()
+            service=Service(executable_path=executable), 
+            options=options
         )
         self.secrets = dotenv_values(".env")
     

@@ -1,3 +1,5 @@
 selenium
 python-dotenv
 flask
+requests
+webdriver_manager

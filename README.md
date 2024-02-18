@@ -47,3 +47,4 @@ https://www.strava.com/oauth/authorize?client_id=CLIENT_ID_FROM_STRAVA_API_SETTI
 -   [Medium Article](https://medium.com/@eric.l.m.thomas/setting-up-strava-webhooks-e8b825329dc7)
 -   [Another Article](https://www.curtiscode.dev/post/project/displaying-strava-stats-using-webhooks/)
 -   [Getting Started with ngrok](https://ngrok.com/docs/getting-started/)
+-   [Bore](https://github.com/ekzhang/bore)
