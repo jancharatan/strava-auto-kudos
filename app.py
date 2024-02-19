@@ -4,6 +4,7 @@ from threading import Thread
 from flask import Flask, request
 from dotenv import dotenv_values
 from strava_controller import StravaController
+from comments import fetch_random_comment
 
 app = Flask(__name__)
 secrets = dotenv_values(".env")
@@ -41,7 +42,7 @@ def webhooks():
     elif request.method == 'POST':
         data = request.get_json()
         if data.get("object_type") == "activity":
-            Thread(target=lambda: give_kudos_and_post_comment(data.get("object_id"), "Beep boop this is a test")).start()
+            Thread(target=lambda: give_kudos_and_post_comment(data.get("object_id"), fetch_random_comment())).start()
         return json.dumps({ 'message': 'Event Received', 'code': 'SUCCESS' }), 200  
 
 def main():
