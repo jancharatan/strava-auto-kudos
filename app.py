@@ -18,7 +18,7 @@ def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
     sc.driver.close()
 
 @app.route('/webhook', methods=['GET', 'POST'])
-def webhooks():
+def webhook():
     if request.method == 'GET':
         mode = request.args.get("hub.mode")
         token = request.args.get("hub.verify_token")
