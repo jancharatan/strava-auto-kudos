@@ -11,6 +11,7 @@ class StravaController:
     def __init__(self) -> None:
         options=Options()
         options.add_argument("--disable-gpu")
+        options.add_argument("--headless")
         executable = GeckoDriverManager().install()
         self.driver = webdriver.Firefox(
             service=Service(executable_path=executable), 

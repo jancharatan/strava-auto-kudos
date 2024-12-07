@@ -10,6 +10,7 @@ app = Flask(__name__)
 secrets = dotenv_values(".env")
 
 def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
+    print(f"Giving kudos and a nice comment to activity {object_id}...")
     sc = StravaController()
     sc.login()
     sc.give_kudos(object_id)
