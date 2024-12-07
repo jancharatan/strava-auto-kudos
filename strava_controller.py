@@ -10,7 +10,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 class StravaController:
     def __init__(self) -> None:
         options=Options()
-        options.add_argument("--headless")
         options.add_argument("--disable-gpu")
         executable = GeckoDriverManager().install()
         self.driver = webdriver.Firefox(
@@ -37,9 +36,9 @@ class StravaController:
     def login(self):
         self.driver.get("https://www.strava.com/login")
         sleep(3)
-        self.find_by_id_and_send_keys("email", self.secrets["STRAVA_EMAIL"])
-        self.find_by_id_and_send_keys("password", self.secrets["STRAVA_PASSWORD"])
-        self.find_by_arbitrary_and_click(By.ID, "login-button")
+        self.find_by_id_and_send_keys("desktop-email", self.secrets["STRAVA_EMAIL"])
+        self.find_by_id_and_send_keys("desktop-current-password", self.secrets["STRAVA_PASSWORD"])
+        self.find_by_arbitrary_and_click(By.ID, "desktop-login-button")
         sleep(3)
 
     def give_kudos(self, activity_id: int) -> None:
