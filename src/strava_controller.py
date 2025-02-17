@@ -41,7 +41,7 @@ class StravaController:
 
     def login(self):
         self.driver.get("https://www.strava.com/login")
-        sleep(10)
+        sleep(2)
         self.find_by_arbitrary_and_send_keys(By.XPATH, './/*[@data-cy="email"]', self.secrets["STRAVA_EMAIL"])
         sleep(2)
         self.find_by_arbitrary_and_send_keys(By.XPATH, './/*[@data-cy="password"]', self.secrets["STRAVA_PASSWORD"])
