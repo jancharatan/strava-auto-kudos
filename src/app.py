@@ -48,7 +48,7 @@ def webhook():
 
 def main():
     print("Starting strava-auto-kudos...")
-    give_kudos_and_post_comment(13637247752, "Hi")
+    app.run(port=5000, debug=True)
 
 if __name__ == "__main__":
     main()
