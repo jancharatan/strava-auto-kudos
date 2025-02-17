@@ -7,7 +7,6 @@ from strava_controller import StravaController
 from comments import fetch_random_comment
 
 app = Flask(__name__)
-secrets = dotenv_values(".env")
 
 def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
     print(f"Giving kudos and a nice comment to activity {object_id}...")
@@ -20,6 +19,7 @@ def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
+    secrets = dotenv_values(".env")
     if request.method == 'GET':
         mode = request.args.get("hub.mode")
         token = request.args.get("hub.verify_token")

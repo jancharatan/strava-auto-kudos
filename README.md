@@ -16,7 +16,7 @@ A bot that gives Strava kudos everytime an authorized account uploads an activit
 
 1. Run `sh startup.sh` and respond to all of the prompts. Note: you don't need dev dependencies just to run the app.
 2. Create an ngrok account and run `ngrok http http://localhost:5000 --domain {YOUR_NGROK_DOMAIN}`
-3. In a separate terminal, make sure you are in the `venv` and run `python3 app.py`
+3. In a separate terminal, make sure you are in the `venv` and run `python3 src/app.py`
 4. Make sure that your Strava API is set up correctly in your account. Most importantly, make sure that your authorization callback domain is set to `YOUR_FREE_STATIC_URL.ngrok-free.app` where you have replaced the subdomain with your subdomain.
 5. Run the following `cURL` command to subscribe the Strava webhook. Make sure to change the client id, client secret, the subdomain of the callback url and the verify token.
 
