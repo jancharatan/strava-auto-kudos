@@ -32,7 +32,7 @@ echo "STRAVA_CLIENT_SECRET=$STRAVA_CLIENT_SECRET" >> .env
 
 # Install requirements + optionally dev requirements
 printf "Do you want to install dev dependencies? 🤖 "
-confirm && pip install -r requirements/dev.txt
-pip install -r requirements/requirements.txt
+confirm && python3 -m pip install -r requirements/dev.txt
+python3 -m pip install -r requirements/requirements.txt
 
 echo "All done ✅"
