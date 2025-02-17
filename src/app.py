@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 def give_kudos_and_post_comment(object_id: int, comment: str | None) -> None:
     print(f"Giving kudos and a nice comment to activity {object_id}...")
-    sc = StravaController(False)
+    sc = StravaController()
     sc.give_kudos(object_id)
     if comment:
         sc.post_comment(object_id, comment)
@@ -47,7 +47,7 @@ def webhook():
 
 def main():
     print("Starting strava-auto-kudos...")
-    give_kudos_and_post_comment(13637247752, "HI")
+    app.run(port=5000, debug=True)
 
 if __name__ == "__main__":
     main()
